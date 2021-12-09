@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react"
 import axios from "axios"
 import { Flex } from "@chakra-ui/react"
 
-import PopularMovieCard from "../../components/PopularMovies"
+import PopularMovieCard from "../../components/PopularMoviesCard"
 
 import { movieUrl } from "../../utils/movieUrl"
 import { ThumbProps } from "../../types/index"
@@ -13,7 +13,8 @@ interface MovieProps {
     original_title: string;
     poster_path: string;
     id: number;
-    popularity: number;
+    vote_average: number;
+    
   }]
 }
 const PopularMovies: FC<ThumbProps> = () => {
@@ -36,7 +37,7 @@ const PopularMovies: FC<ThumbProps> = () => {
           id={movie.id}
           image={movie.poster_path}
           original_title={movie.original_title}
-          popularity={movie.popularity}
+          vote_average={movie.vote_average}
         />
       ))}
     </Flex>
