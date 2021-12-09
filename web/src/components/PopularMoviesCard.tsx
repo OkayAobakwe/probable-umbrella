@@ -14,7 +14,7 @@ import NextLink from "next/link"
 import { imageUrl } from "../utils/imageUrl"
 import { ThumbProps } from "../types/index"
 
-const PopularMovieCard: FC<ThumbProps> = ({original_title, image, popularity, id}: ThumbProps) => {
+const PopularMovieCard: FC<ThumbProps> = ({original_title, image, vote_average, id}: ThumbProps) => {
 
   return (
     <Center ml={2} mt={4}>
