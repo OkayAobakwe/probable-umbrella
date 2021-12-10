@@ -1,4 +1,4 @@
-export interface ThumbProps {
+export interface MovieProps {
   original_title: string;
   image: string;
   id: number;
