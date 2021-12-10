@@ -5,10 +5,9 @@ import { Flex } from "@chakra-ui/react"
 import PopularMovieCard from "../../components/PopularMoviesCard"
 
 import { movieUrl } from "../../utils/movieUrl"
-import { ThumbProps } from "../../types/index"
 
 
-interface MovieProps {
+interface ResultsProps {
   results: [{
     original_title: string;
     poster_path: string;
@@ -17,9 +16,9 @@ interface MovieProps {
     
   }]
 }
-const PopularMovies: FC<ThumbProps> = () => {
+const PopularMovies= () => {
   const [state, setState] = useState({
-    "data": {} as MovieProps
+    "data": {} as ResultsProps
   })
   useEffect(() => {
     axios.get(
