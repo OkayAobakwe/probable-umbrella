@@ -3,7 +3,10 @@ import {
   Button
 } from '@chakra-ui/react'
 import { Form, Formik } from 'formik'
+import axios from "axios"
+
 import { InputField } from './FormInput'
+import { trelloUrl } from "../utils/trelloUrl"
 
 const OrderForm = () => {
 
@@ -16,10 +19,9 @@ const OrderForm = () => {
         phoneNumber: ""
        }}
       onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          actions.setSubmitting(false)
-        }, 1000)
+        axios.post(`${trelloUrl}`)
+          .then((res) => console.log(res))
+          .catch((err) => console.log(err))
       }}
     >
       {(props) => (
@@ -49,6 +51,7 @@ const OrderForm = () => {
             colorScheme='teal'
             isLoading={props.isSubmitting}
             type='submit'
+
           >
             Submit
           </Button>
